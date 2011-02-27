@@ -1,0 +1,23 @@
+<html>
+<body ACL="2;">
+<span id = "secret" ACL="2;">
+unchanged
+</span>
+<script>
+function b()
+{
+	document.getElementById('secret').innerHTML = 'xxx';
+}
+</script>
+<div id = "puppet" onclick = 'b()'>
+alert
+</div>
+<script worldID="2;">
+var c = 1;
+//document.write(unescape("%3Cscript src='test.js' type='text/javascript'%3E%3C/script%3E"));
+document.write(unescape("%3Cdiv onclick = document.getElementById(&#39;secret&#39;).innerHTML=c;%3Eabc%3C/div%3E"));
+//document.write("<div> abc </div>");
+</script>
+<!--<a worldID = "2" href = "javascript:alert(document.body.firstChild.nextSibling.innerText);">abbbb</a> -->
+</body>
+</html>

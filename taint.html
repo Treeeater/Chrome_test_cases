@@ -1,0 +1,30 @@
+<html>
+<body>
+<div ACL="3;" ROACL="3;" id = "1">
+original
+</div>
+<div ACL="3;" ROACL="3;" id = "2">
+original
+</div>
+<div ACL="3;" ROACL="3;" id = "3">
+original
+</div>
+<div ACL="3;" ROACL="3;" id = "4">
+original
+</div>
+<script worldID="3">
+var handle = document.getElementById('toread');
+</script>
+<script>
+document.getElementById('1').setAttribute('src','aaa');
+document.getElementById('2').innerHTML = 'original';
+document.getElementById('3').innerText = 'original';
+</script>
+<script worldID="3">
+document.getElementById('1').innerHTML = "Bahh!";
+document.getElementById('2').innerHTML = "Bahh!";
+document.getElementById('3').innerHTML = "Bahh!";
+document.getElementById('4').innerHTML = "Bahh!";
+</script>
+</body>
+</html>

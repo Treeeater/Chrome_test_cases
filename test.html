@@ -1,0 +1,30 @@
+<html>
+<head>
+<title id = "title">
+This is a test page
+</title>
+</head>
+<body ACL="2;">
+<span id = "secret" ROACL="1;">
+unchanged
+<div id = "handler">
+</div>
+</span>
+<script>
+function b()
+{
+	document.getElementById('secret').innerHTML = 'xxx';
+}
+</script>
+<div id = "tochange">
+tochange
+</div>
+<script worldID="1;">
+//document.getElementById("tochange").innerHTML = document.getElementById("secret").innerHTML;
+//document.getElementById("tochange").innerHTML = document.getElementById("handler").previousSibilng;
+//document.getElementById("secret").firstChild.data = "abc";
+document.getElementById("tochange").setAttribute("abc","abcd");
+</script>
+
+</body>
+</html>

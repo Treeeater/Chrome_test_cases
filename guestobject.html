@@ -1,0 +1,59 @@
+<html>
+<head>
+</head>
+<body>
+<div ACL = "10;" ROACL="10;" id = "10">aaa</div>
+<div ACL = "100;" ROACL="100;" id = "100"></div>
+<script worldID="10" SharedLibId="jQuery">
+var c = 222;
+(function(w){
+thistag = document.getElementById("10");
+function cli()
+{
+	//document.getElementById("10").innerHTML=c;
+	thistag.innerHTML=c;
+}
+var c = 123;
+function spy()
+{
+	//document.getElementById("10").onclick=cli;
+	thistag.onclick=cli;
+}
+checkeq = function(obj)
+{
+	return obj.document===document;
+}
+checkeq2 = function()
+{
+	return window.window === window;
+}
+ret3 = function ()
+{
+	navigator.sss = 3333;
+}
+ret1 = function ()
+{
+	return window.window.c;
+}
+clocki = function ()
+{
+	document.getElementById("10").innerHTML="fff";
+}
+})(window);
+alert(window.window.c);
+//spy();
+</script>
+<script>
+clocki = function ()
+{
+	document.getElementById("10").innerHTML="fff";
+}
+</script>
+<script>
+var c = 321;
+navigator.sss = 333;
+//jQuery.spy();
+//jQuery.checkeq(window);
+</script>
+</body>
+</html>

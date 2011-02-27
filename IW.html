@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>
+Debug usage
+</title>
+</head>
+<body>
+<div id="GlobalVariable">
+Isolated world mechanism between script1 and global is successful.
+</div>
+<div id = "div1" ACL="1356173795;144448125;">
+Click here to see if Isolated world mechanism (function iso) between script1 and script 2 is successful.
+</div>
+<div id = "div2" ACL="1356173795;144448125;">
+Isolated world mechanism between script1 and script2 is successful.
+</div>
+<span id = "span1" ACL="1356173795;144448125;">
+Isolated world failed between script1 and global: From script1, it has access to global script
+</span>
+<script id = "globalscript">
+var globalvar1 = "Isolated world mechanism between script1 and global is successful.";
+</script>
+<script id = "script1" IW="true">
+var settime = "settimeout OK";
+function ale() {alert("good!");}
+function func1() { document.getElementById('div1').innerHTML="<b>Isolated world mechanism (function iso) between script1 and script 2 is NOT successful.</b>"; }
+//var script1func1=func1;
+var script1var1 = "<b>Isolated world mechanism failed between script1 and script2: From script2 it has access to script1's variable</b>";
+if (window.globalvar1!==undefined) 
+{
+	document.getElementById('GlobalVariable').innerHTML = "<b>"+document.getElementById('span1').innerHTML+"</b>";
+}
+var c = document.createElement('div');
+c.setAttribute('id', "created");
+c.setAttribute('private_attr',"you can't see this");
+c.innerHTML="This node is created by Script 1 with a hidden attribute called private_attr.";
+document.body.appendChild(c);
+//document.getElementById('div1').onclick=ale;
+</script>
+<script id = "script2" IW="true">
+//document.getElementById("GlobalVariable").innerHTML=document.firstChild.firstChild.nextSibling.firstChild.nextSibling.nextSibling.nextSibling.innerHTML;
+var script2var2=document.getElementById('created').innerHTML;
+document.getElementById('created').innerHTML = "This node is created by Script1 but changed by script2, isolatedworld allows this by default";
+if (window.func1!==undefined) 
+{
+	document.getElementById('div1').onclick=function(){func1();};
+}
+setTimeout('if (window.script1var1!==undefined) {document.getElementById("div2").innerHTML=script1var1;}',1000);// else {document.getElementById("gen").innerHTML="isolatedworld works";}',1000);
+//alert(document.getElementById('div1').onclick);
+</script>
+</body>
+</html>

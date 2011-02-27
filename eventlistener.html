@@ -1,0 +1,22 @@
+<html>
+<body>
+<div id = "secret" ACL="1;">
+unchanged
+</div>
+<div id = "button" ACL="1;">
+press here
+</div>
+<script id="global">
+var b = "abc";
+</script>
+<script id="scriptnode" worldID="1">
+function d() {document.getElementById("secret").innerHTML=b;}
+var a = document.getElementById("button");
+var b = "changed";
+//a.innerHTML = b;
+a.onclick=d;
+//a.setAttribute("onClick","document.getElementById('secret').innerHTML=document.getElementById('button').innerHTML;");
+//a.addEventListener('click', d, false);
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<html>
+<body ROACL="2;" ACL="2;">
+<div id = "secret">
+secret
+</div>
+<div id = "public">
+i want secret to be here
+</div>
+<!--<a href="javascript:document.getElementById('public').innerHTML=document.getElementById('secret').innerHTML;">abc</a> -->
+<script worldID="2">
+var d = document;
+var text = d.createTextNode("document.getElementById('public').innerHTML=document.getElementById('secret').innerHTML"); 
+var script = d.createElement("script");
+script.appendChild(text); 
+d.body.appendChild(script);
+var a = d.createElement("a");
+var text = d.createTextNode("click here");
+a.setAttribute("href","javascript:document.getElementById('public').innerHTML=document.getElementById('secret').innerHTML;");
+a.appendChild(text);
+d.body.appendChild(a);
+</script>
+</body>
+</html>

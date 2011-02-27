@@ -1,0 +1,14 @@
+<html>
+<body>
+<div id = "abc" ACL="1;">
+This is a div element
+</div>
+<script id = "script1" worldID="1">
+//document.firstChild.firstChild.nextSibling.firstChild.nextSibling.innerHTML="good2";
+var a = "good2";
+</script>
+<script worldID="2">
+document.firstChild.firstChild.nextSibling.childNodes[1].innerHTML=a;
+</script>
+</body>
+</html>

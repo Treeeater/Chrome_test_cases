@@ -1,0 +1,23 @@
+<html URLgetterACL="2;" cookiesetterACL="1;" titlesetterACL="2;" writeACL="2;" openACL="1;">
+<head></head>
+<body>
+<div id = "cookietext" ACL="1;">
+</div>
+<div id = "URLtext">
+</div>
+<script>
+document.cookie = "abc=bcd";
+</script>
+<script id = "URLscript" worldID="2">
+//document.getElementById("ACL").setAttribute("cookieACL","783729080;");
+//document.getElementsByTagName("div")[0].innerHTML="abc";
+var doc=document.open("text/html","replace");
+var txt="Learning about the HTML DOM is fun!";
+doc.write(txt);
+doc.close();
+</script>
+<script id = "cookiescript" worldID="2">
+document.title="abc";
+</script>
+</body>
+</html>

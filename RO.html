@@ -1,0 +1,55 @@
+<html bodygetterACL = "1;">
+<head>
+<style type="text/css">
+body
+{
+background-color:#d0e4fe;
+}
+h1
+{
+color:orange;
+text-align:center;
+}
+</style>
+</head>
+<body id = "body" ACL="1;" ROACL="2;">
+<div id = "secret" ROACL="1;" name = "sec">
+secret
+</div>
+<div id = "public" ROACL="1;">
+i want secret to be here
+</div>
+<form id="frm1" name="form1" ROACL = "1;">
+First name: <input type="text" name="fname" value="Donald" /><br />
+Last name: <input type="text" name="lname" value="Duck" /><br />
+</form>
+<a href = "index.html" id = "a" ROACL = "1;"> index </a>
+<script worldID="1">
+//document.getElementById("public").removeChild(document.getElementById("public").firstChild);
+//document.getElementById("public").innerHTML = document.getElementById('secret').innerHTML;
+//document.getElementById("public").firstChild.nodeValue = document.getElementById('secret').innerHTML;
+//document.getElementById("public").setAttribute("abc","abcd");
+//function b() {document.getElementById("secret").innerHTML="secret changed";}
+//document.getElementById("public").onclick = b;
+//document.getElementById("public").addEventListener('click', b, false);
+//document.getElementById("frm1").action = "abc.asp";
+//document.getElementById("public").setAttribute("style","font-size:20px");
+//document.body.style.backgroundColor = 'red';
+//document.getElementById("secret").style.fontWeight = 'bold';
+
+//var b = document.getElementById("secret").style.fontWeight;
+
+/*var newimg = document.createElement('img');
+newimg.setAttribute('src', 'jace.jpeg');
+document.body.appendChild(newimg);*/
+
+//var attr = document.getElementById("secret").attributes;
+//attr.getNamedItem('ROACL').value = "1;";
+
+//var a = document.createAttribute("roacl");
+//a.nodeValue = "1;";
+//document.getElementById("secret").setAttributeNode(a);
+document.getElementById("secret").firstChild.replaceWholeText("changed");
+</script>
+</body>
+</html>

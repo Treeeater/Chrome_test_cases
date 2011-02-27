@@ -1,0 +1,18 @@
+<html>
+<body>
+<div ACL="3;" ROACL="3;" id = "towrite">
+</div>
+<div ACL="3;" ROACL="3;" id = "toread">
+original
+</div>
+<script worldID="3">
+var handle = document.getElementById('toread');
+</script>
+<script>
+document.getElementById('toread').setAttribute('src','aaa');
+</script>
+<script worldID="3">
+document.getElementById('towrite').innerHTML = handle.innerHTML;
+</script>
+</body>
+</html>

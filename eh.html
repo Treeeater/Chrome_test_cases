@@ -1,0 +1,70 @@
+<html>
+<body>
+<div id = "1" ACL="1;" ROACL="1;">
+1111111111
+</div>
+<span id = "2" ACL="1;" ROACL="1;">
+2222222222
+</span>
+<div id = "3" ACL="1;" ROACL="1;">
+3333333333
+</div>
+<div id = "4" ACL="1;" ROACL="1;">
+4444444444
+</div>
+<span id = "5" ACL="2;" ROACL="2;">
+5555555555
+</span>
+<div id = "6" ACL="2;" ROACL="2;">
+6666666666
+</div>
+<div id = "7" ACL="2;" ROACL="2;">
+7777777777
+</div>
+<div id = "8" ACL="2;" ROACL="2;">
+8888888888
+</div>
+<script id="global">
+var a = "abc";
+</script>
+<script id = "abc">
+var testsee1 = "abc1";
+function b() {document.getElementById("1").innerHTML=testsee1; return testsee1;}
+function c() {document.getElementById("2").innerHTML=testsee1; return testsee1;}
+function d() {document.getElementById("3").innerHTML=testsee1; return testsee1;}
+function e() {document.getElementById("4").innerHTML=testsee1; return testsee1;}
+var a1 = document.getElementById("1");
+var a2 = document.getElementById("2");
+var a3 = document.getElementById("3");
+var a4 = document.getElementById("4");
+a1.setAttribute("onClick","b()");
+eval("a2.addEventListener('click', c, false);");
+a3.onclick = d;
+var a = document.createAttribute("onclick");
+a.nodeValue = "e()";
+//a4.setAttributeNode(a);
+var attr = a4.attributes;
+attr.setNamedItem(a);
+</script>
+<script id = "abc2" worldID = "2">
+function b() {document.getElementById("5").innerHTML=testsee2;}
+function c() {document.getElementById("6").innerHTML=testsee2;}
+function d() {document.getElementById("7").innerHTML=testsee2;}
+function e() {document.getElementById("8").innerHTML=testsee2;}
+var a1 = document.getElementById("5");
+var a2 = document.getElementById("6");
+var a3 = document.getElementById("7");
+var a4 = document.getElementById("8");
+var testsee2 = "abc2";
+a1.setAttribute("onClick","document.getElementById('5').innerHTML=testsee2;");
+a2.addEventListener('click', c, false);
+a3.onclick = d;
+var a = document.createAttribute("onclick");
+a.nodeValue = "e()";
+a4.setAttributeNode(a);
+</script>
+<script worldID="1">
+alert(document.getElementById('4').onclick());
+</script>
+</body>
+</html>

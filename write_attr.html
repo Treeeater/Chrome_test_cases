@@ -1,0 +1,17 @@
+<html>
+<body ACL="3;" ROACL="3;">
+<script>
+function test()
+{
+	alert('test failed');
+}
+</script>
+<script worldID="3">
+function test()
+{
+	alert('test passed');
+}
+document.write("<img src=\"test.jpg\" onload=\"test()\"/>");
+</script>
+</body>
+</html>

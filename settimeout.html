@@ -1,0 +1,23 @@
+<html>
+<head>
+</head>
+<body>
+<div id = "con">
+content
+</div>
+<script>
+c = "333";
+</script>
+<script worldID="3" SharedLibId="sss">
+var change = function(){
+document.getElementById("con").innerHTML = c;
+}
+var manual = function(){
+document.getElementById("con").innerHTML = c+"aaa";
+}
+var c = "222";
+setTimeout("change()",1000);
+document.getElementById("con").onclick=manual;
+</script>
+</body>
+</html>
